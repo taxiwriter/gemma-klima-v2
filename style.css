@@ -1,0 +1,242 @@
+/* Gemma Klima Styles - extracted from test-resp.html */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+header {
+    background: #bdd80d url('./bilder/Tomislav-HG-VIdeo_small.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.header-h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+    text-shadow:
+        -2px -2px 0 #002060,
+        2px -2px 0 #002060,
+        -2px 2px 0 #002060,
+        2px 2px 0 #002060,
+        0 2px 0 #002060,
+        2px 0 0 #002060,
+        0 -2px 0 #002060,
+        -2px 0 0 #002060;
+}
+.header-img {
+    width: clamp(150px, 25vw, 300px);
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+.section0-left {
+    text-align: left;
+}
+.section0-right {
+    text-align: right;
+}
+
+section {
+    background: #fff;
+    margin: 20px 0;
+    padding: clamp(15px, 3vw, 20px);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#section1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+#section8 {
+  margin-top: -30px;
+  padding: 0px;
+  height: clamp(100px,50vw,500px);
+  background-image: url(./bilder/GEMMA-KLIMA_Treffs_Graz_neu.jpg);
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin-bottom: -50px;
+}
+
+#section2 {
+    height: clamp(500px, 100vh, 600px);
+    background-image: url(./bilder/_PR_8516-web_schnitt.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#video {
+    text-align: center;
+}
+#video video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 0;
+}
+ul {
+    padding-left: clamp(15px, 3vw, 20px);
+}
+li {
+    margin-bottom: 0.5rem;
+}
+a {
+    color: #73ca10;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4c8808;
+    text-decoration: underline;
+}
+footer {
+    text-align: center;
+    padding: clamp(2rem, 5vw, 10%);
+    margin-top: 20px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    color: #666;
+}
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+.logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    max-height: 200px;
+}
+.logo-item img {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+    .header-h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .header-img {
+        width: 200px;
+        height: auto;
+    }
+    section {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    #section2 {
+        height: 200px;
+    }
+    .logo-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    .logo-item {
+        max-width: 120px;
+        max-height: 120px;
+    }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+    .container {
+        padding: 0 20px;
+    }
+    header {
+        padding: 4rem 3rem;
+    }
+    .header-h1 {
+        font-size: 3rem;
+    }
+    .header-img {
+        width: 250px;
+    }
+    #section2 {
+        height: 300px;
+    }
+    .logo-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    .logo-item {
+        max-width: 120px;
+        max-height: 120px;
+    }
+}
+@media (min-width: 801px) {
+    .container {
+        padding: 0 40px;
+    }
+    header {
+        padding: 4rem 6rem;
+    }
+    .header-h1 {
+        font-size: 4rem;
+        padding-left: 5%;
+    }
+    .header-img {
+        width: 300px;
+        margin-bottom: -80px;
+    }
+    #section2 {
+        height: 400px;
+    }
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+    .content-grid section {
+        margin: 0;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 60px;
+    }
+    header {
+        padding: 6rem 8rem;
+    }
+} 
