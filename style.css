@@ -235,7 +235,7 @@ footer {
 }
 .form-submit {
     display: inline-block;
-    margin: 0.5rem 0 1.5rem 0;
+    margin: 0.5rem 0 0 0;
     padding: 0.75rem 1.75rem;
     border: none;
     border-radius: 8px;
@@ -248,6 +248,29 @@ footer {
 }
 .form-submit:hover {
     background: #4c8808;
+}
+.form-submit:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+.form-status {
+    margin: 0.75rem 0 1.5rem 0;
+    min-height: 1.4em;
+}
+.form-status.success {
+    color: #4c8808;
+    font-weight: bold;
+}
+.form-status.error {
+    color: #b00020;
+    font-weight: bold;
+}
+.form-honey {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 .logo-container {
     display: grid;
