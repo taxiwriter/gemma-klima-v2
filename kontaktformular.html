@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktformular - GEMMA KLIMA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="header-h1">GEMMA KLIMA</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="section1" style="position: relative; top: 1px; left: -1px;">
+                <h2>Kontaktformular</h2>
+                <p>Falls Sie ebenfalls aktiv werden wollen – auch in einer anderen Stadt oder Gemeinde – dann bitten wir Sie, über folgendes Formular mit uns Kontakt aufzunehmen.</p>
+        
+            </section>
+
+            <section id="kontaktformular">
+                <form id="kontakt-form" action="mailto:kontakt@gemma-klima.at" method="post" enctype="text/plain">
+                    <fieldset class="form-group-set">
+                        <legend>Pflichtfelder</legend>
+
+                        <div class="form-group">
+                            <label for="vorname">Vorname <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="vorname" name="vorname" required autocomplete="given-name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nachname">Nachname <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="nachname" name="nachname" required autocomplete="family-name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-Mail <span class="required" aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefon">Telefon <span class="required" aria-hidden="true">*</span></label>
+                            <input type="tel" id="telefon" name="telefon" required autocomplete="tel">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group-set">
+                        <legend>Optionale Angaben</legend>
+
+                        <div class="form-group">
+                            <label for="taetigkeitsfeld">Tätigkeitsfeld</label>
+                            <input type="text" id="taetigkeitsfeld" name="taetigkeitsfeld">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="idee">Mögliche Idee von Aktivität/Challenge, die Sie mit Ihrer Gruppe machen wollen</label>
+                            <textarea id="idee" name="idee" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ort">Ort, wo Sie tätig werden möchten</label>
+                            <input type="text" id="ort" name="ort">
+                        </div>
+                    </fieldset>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="ja">
+                        <label for="newsletter">Newsletter Abo abschließen</label>
+                    </div>
+                    <br>
+                    <p class="form-hinweis">Mit dem Absenden erkläre ich mich bereit per E-Mail oder telefonisch kontaktiert zu werden.</p>
+
+                    <button type="submit" class="form-submit">Absenden</button>
+                </form>
+                <p><a href="index.html">Zurück zur Startseite</a></p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 GEMMA KLIMA
+            | <a href="impressum.html">Impressum</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('kontakt-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const form = event.target;
+            const body = [
+                'Vorname: ' + form.vorname.value,
+                'Nachname: ' + form.nachname.value,
+                'E-Mail: ' + form.email.value,
+                'Telefon: ' + form.telefon.value,
+                '',
+                'Tätigkeitsfeld: ' + form.taetigkeitsfeld.value,
+                '',
+                'Mögliche Idee von Aktivität/Challenge:',
+                form.idee.value,
+                '',
+                'Ort, wo Sie tätig werden möchten: ' + form.ort.value,
+                '',
+                'Newsletter Abo abschließen: ' + (form.newsletter.checked ? 'Ja' : 'Nein')
+            ].join('\n');
+            const mailto = 'mailto:kontakt@gemma-klima.at'
+                + '?subject=' + encodeURIComponent('Kontaktanfrage GEMMA KLIMA')
+                + '&body=' + encodeURIComponent(body);
+            window.location.href = mailto;
+        });
+    </script>
+
+</body>
+</html>

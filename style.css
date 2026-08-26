@@ -123,6 +123,93 @@ footer {
     font-size: clamp(0.8rem, 2vw, 0.9rem);
     color: #666;
 }
+.form-group-set {
+    border: none;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+.form-group-set legend {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+.form-group {
+    margin-bottom: 1.25rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+    background: #fff;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    outline: 2px solid #73ca10;
+    outline-offset: 1px;
+    border-color: #73ca10;
+}
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+.form-check input[type="checkbox"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    accent-color: #73ca10;
+    cursor: pointer;
+}
+.form-check label {
+    font-weight: normal;
+    cursor: pointer;
+}
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.required {
+    color: #73ca10;
+}
+.form-hinweis {
+    margin: 1.25rem 0 0.75rem 0;
+    font-size: 0.95rem;
+}
+.form-submit {
+    display: inline-block;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-radius: 8px;
+    background: #73ca10;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form-submit:hover {
+    background: #4c8808;
+}
 .logo-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
