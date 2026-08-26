@@ -16,6 +16,43 @@ body {
     overflow: auto;
     padding: 0 20px;
 }
+.main-nav {
+    background: #afca0b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0.75rem calc(20px + clamp(15px, 3vw, 20px));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 2.5rem;
+    max-width: 1000px;
+}
+.main-nav li {
+    display: flex;
+    align-items: center;
+}
+.main-nav a {
+    color: #002060;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+.main-nav a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+#mitmachen,
+#projektpartner {
+    scroll-margin-top: 4rem;
+}
 header {
     background: #bdd80d url('./bilder/Tomislav-HG-VIdeo_small.jpg') center/cover no-repeat;
     color: #fff;
@@ -104,9 +141,7 @@ h2 {
 ul {
     padding-left: clamp(15px, 3vw, 20px);
 }
-li {
-    margin-bottom: 0.5rem;
-}
+
 a {
     color: #73ca10;
     text-decoration: none;
@@ -236,6 +271,10 @@ footer {
     .container {
         padding: 0 15px;
     }
+    .main-nav ul {
+        padding-left: calc(15px + 15px);
+        padding-right: calc(15px + 15px);
+    }
     header {
         flex-direction: column;
         text-align: center;
@@ -295,6 +334,10 @@ footer {
     .container {
         padding: 0 40px;
     }
+    .main-nav ul {
+        padding-left: calc(40px + clamp(15px, 3vw, 20px));
+        padding-right: calc(40px + clamp(15px, 3vw, 20px));
+    }
     header {
         padding: 4rem 6rem;
     }
@@ -322,6 +365,10 @@ footer {
 @media (min-width: 1200px) {
     .container {
         padding: 0 60px;
+    }
+    .main-nav ul {
+        padding-left: calc(60px + clamp(15px, 3vw, 20px));
+        padding-right: calc(60px + clamp(15px, 3vw, 20px));
     }
     header {
         padding: 6rem 8rem;
