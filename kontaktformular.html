@@ -58,6 +58,23 @@
                             <label for="telefon">Telefon <span class="required" aria-hidden="true">*</span></label>
                             <input type="tel" id="telefon" name="telefon" required autocomplete="tel">
                         </div>
+
+                        <div class="form-group">
+                            <label for="ort">Ort, wo Sie tätig werden möchten <span class="required" aria-hidden="true">*</span></label>
+                            <select id="ort" name="ort" required>
+                                <option value="" disabled selected>Bitte wählen</option>
+                                <option value="Graz">Graz</option>
+                                <option value="Judenburg">Judenburg</option>
+                                <option value="Weiz">Weiz</option>
+                                <option value="Anderer Ort">Anderer Ort</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group" id="anderer-ort-gruppe" hidden>
+                            <label for="anderer-ort">Anderer Ort <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="anderer-ort" name="anderer_ort" autocomplete="address-level2">
+                        </div>
+
                     </fieldset>
 
                     <fieldset class="form-group-set">
@@ -74,22 +91,7 @@
                         </div>
                     </fieldset>
 
-                    <div class="form-group">
-                        <label for="ort">Ort, wo Sie tätig werden möchten <span class="required" aria-hidden="true">*</span></label>
-                        <select id="ort" name="ort" required>
-                            <option value="" disabled selected>Bitte wählen</option>
-                            <option value="Graz">Graz</option>
-                            <option value="Judenburg">Judenburg</option>
-                            <option value="Weiz">Weiz</option>
-                            <option value="Anderer Ort">Anderer Ort</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" id="anderer-ort-gruppe" hidden>
-                        <label for="anderer-ort">Anderer Ort <span class="required" aria-hidden="true">*</span></label>
-                        <input type="text" id="anderer-ort" name="anderer_ort" autocomplete="address-level2">
-                    </div>
-
+                   
                     <div class="form-check">
                         <input type="checkbox" id="newsletter" name="newsletter" value="ja">
                         <label for="newsletter">Newsletter-Abo abschließen</label>
