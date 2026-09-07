@@ -72,12 +72,23 @@
                             <label for="idee">Mögliche Idee von Aktivität/Challenge, die Sie mit Ihrer Gruppe machen wollen</label>
                             <textarea id="idee" name="idee" rows="5"></textarea>
                         </div>
-
-                        <div class="form-group">
-                            <label for="ort">Ort, wo Sie tätig werden möchten</label>
-                            <input type="text" id="ort" name="ort">
-                        </div>
                     </fieldset>
+
+                    <div class="form-group">
+                        <label for="ort">Ort, wo Sie tätig werden möchten <span class="required" aria-hidden="true">*</span></label>
+                        <select id="ort" name="ort" required>
+                            <option value="" disabled selected>Bitte wählen</option>
+                            <option value="Graz">Graz</option>
+                            <option value="Judenburg">Judenburg</option>
+                            <option value="Weiz">Weiz</option>
+                            <option value="Anderer Ort">Anderer Ort</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="anderer-ort-gruppe" hidden>
+                        <label for="anderer-ort">Anderer Ort <span class="required" aria-hidden="true">*</span></label>
+                        <input type="text" id="anderer-ort" name="anderer_ort" autocomplete="address-level2">
+                    </div>
 
                     <div class="form-check">
                         <input type="checkbox" id="newsletter" name="newsletter" value="ja">
@@ -101,6 +112,21 @@
     </footer>
 
     <script>
+        const ortSelect = document.getElementById('ort');
+        const andererOrtGruppe = document.getElementById('anderer-ort-gruppe');
+        const andererOrtInput = document.getElementById('anderer-ort');
+
+        function toggleAndererOrt() {
+            const show = ortSelect.value === 'Anderer Ort';
+            andererOrtGruppe.hidden = !show;
+            andererOrtInput.required = show;
+            if (!show) {
+                andererOrtInput.value = '';
+            }
+        }
+
+        ortSelect.addEventListener('change', toggleAndererOrt);
+
         document.getElementById('kontakt-form').addEventListener('submit', async function (event) {
             event.preventDefault();
             const form = event.target;
@@ -127,6 +153,7 @@
                 'Tätigkeitsfeld': form.taetigkeitsfeld.value,
                 'Mögliche Idee von Aktivität/Challenge': form.idee.value,
                 'Ort, wo Sie tätig werden möchten': form.ort.value,
+                'Anderer Ort': form.anderer_ort.value,
                 'Newsletter Abo abschließen': form.newsletter.checked ? 'Ja' : 'Nein'
             };
 
@@ -146,6 +173,7 @@
                 status.className = 'form-status success';
                 status.textContent = 'Vielen Dank! Ihre Nachricht wurde gesendet.';
                 form.reset();
+                toggleAndererOrt();
             } catch (error) {
                 status.className = 'form-status error';
                 status.textContent = 'Das Senden ist fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie direkt an kontakt@gemma-klima.at.';

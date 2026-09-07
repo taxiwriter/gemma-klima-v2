@@ -184,6 +184,7 @@ footer {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"],
+.form-group select,
 .form-group textarea {
     width: 100%;
     max-width: 100%;
@@ -196,9 +197,13 @@ footer {
     color: #333;
     background: #fff;
 }
+.form-group select {
+    cursor: pointer;
+}
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group input[type="tel"]:focus,
+.form-group select:focus,
 .form-group textarea:focus {
     outline: 2px solid #73ca10;
     outline-offset: 1px;
