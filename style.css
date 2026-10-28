@@ -112,6 +112,9 @@ section {
 .news-item__body > *:first-child {
     margin-top: 0;
 }
+.news-item__body li + li {
+    margin-top: 10px;
+}
 .news-item__image {
     width: 250px;
     height: 250px;
