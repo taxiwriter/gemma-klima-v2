@@ -167,6 +167,9 @@ h2 {
 ul {
     padding-left: clamp(15px, 3vw, 20px);
 }
+em {
+    font-size: 1.2em;
+}
 
 a {
     color: #73ca10;
