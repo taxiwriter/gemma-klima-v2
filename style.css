@@ -80,6 +80,23 @@ header {
         0 -2px 0 #002060,
         -2px 0 0 #002060;
 }
+
+a.header-a-h1:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.header-a-h1:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.header-a-h1:hover {
+    color: #73ca10;
+    text-decoration: none;
+}
+
+
 .header-img {
     width: clamp(150px, 25vw, 300px);
     height: auto;
